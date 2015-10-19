@@ -120,15 +120,20 @@ class CalculationsController < ApplicationController
     diff = @numbers[i] - @mean
     sq_diff = diff ** 2
     var = var + sq_diff
+    i = i + 1
     end
 
     @variance = var / @count
-
-
-
     @standard_deviation = Math.sqrt(@variance)
 
-    @mode = "Replace this string with your answer."
+    # mode
+  i=0
+ times = [0,0,0,0,0,0,0]
+    if i < @count
+       times[i] = @numbers.count[i]
+        i = i + 1
+    end
+@mode = times
 
     # ================================================================================
     # Your code goes above.
