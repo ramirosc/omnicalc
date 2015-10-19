@@ -100,7 +100,14 @@ class CalculationsController < ApplicationController
 
     @range = @numbers.max - @numbers.min
 
-    @median = "Replace"
+
+    if @numbers.count.odd?
+    @median = @sorted_numbers[@numbers.count / 2]
+    else
+        left = @sorted_numbers[(@numbers.count / 2) -1]
+        right = @sorted_numbers[(@numbers.count / 2)]
+        @median = (left + right) / 2
+    end
 
     @sum = @numbers.sum
 
