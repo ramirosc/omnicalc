@@ -109,11 +109,22 @@ class CalculationsController < ApplicationController
         @median = (left + right) / 2
     end
 
+
     @sum = @numbers.sum
 
     @mean = @numbers.sum / @numbers.count
 
-    @variance = "Replace this string with your answer."
+    var=0
+    i = 0
+    if i < @count
+    diff = @numbers[i] - @mean
+    sq_diff = diff ** 2
+    var = var + sq_diff
+    end
+
+    @variance = var / @count
+
+
 
     @standard_deviation = "Replace this string with your answer."
 
