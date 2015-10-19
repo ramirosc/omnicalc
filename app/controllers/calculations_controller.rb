@@ -128,12 +128,18 @@ class CalculationsController < ApplicationController
 
     # mode
   i=0
- times = [0,0,0,0,0,0,0]
+  j=0
+ times = []
     if i < @count
        times[i] = @numbers.count[i]
+
+        if times[i] > times[j]
+        j=i
+        end
+
         i = i + 1
     end
-@mode = times
+@mode = j
 
     # ================================================================================
     # Your code goes above.
