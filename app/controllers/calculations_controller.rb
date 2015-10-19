@@ -126,7 +126,7 @@ class CalculationsController < ApplicationController
 
 
 
-    @standard_deviation = "Replace this string with your answer."
+    @standard_deviation = Math.sqrt(@variance)
 
     @mode = "Replace this string with your answer."
 
