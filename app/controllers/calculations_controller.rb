@@ -116,7 +116,7 @@ class CalculationsController < ApplicationController
 
     var=0
     i = 0
-    if i < @count
+    while i < @count
     diff = @numbers[i] - @mean
     sq_diff = diff ** 2
     var = var + sq_diff
@@ -130,7 +130,7 @@ class CalculationsController < ApplicationController
   i=0
   j=0
  times = []
-    if i < @count
+    while i < @count
        times[i] = @numbers.count[i]
 
         if times[i] > times[j]
@@ -139,7 +139,7 @@ class CalculationsController < ApplicationController
 
         i = i + 1
     end
-@mode = j
+@mode = @numbers[j]
 
     # ================================================================================
     # Your code goes above.
